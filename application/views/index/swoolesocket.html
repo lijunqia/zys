@@ -8,7 +8,8 @@
 </style>
   <meta charset="UTF-8">
   <script type="text/javascript">
-  var exampleSocket = new WebSocket("ws://192.168.1.46:9503");//设为相应的监听ｉｐ及端口号
+    var exampleSocket = new WebSocket("ws://"+document.domain+":9503");//设为相应的监听ｉｐ及端口号
+//    var exampleSocket = new WebSocket("wss://"+document.domain+":9503");//设为相应的监听ｉｐ及端口号
   exampleSocket.onopen = function (event) {
     exampleSocket.send("亲！我连上啦！"); 
   };

@@ -302,24 +302,24 @@ class IndexController extends Yaf_Controller_Abstract {
     	//直播视频接受
         Yaf_Dispatcher::getInstance()->autoRender(FALSE);
         $this->getView()->display("index/swoolelive.html");
-}
-public function rpcAction(){
-    	//rpc调用
+    }
+    public function rpcAction(){
+        //rpc调用
         Yaf_Dispatcher::getInstance()->autoRender(FALSE);
         $sd=new RpcClient;
-		$datas=array('name' => 'userinfo','result'=>'{"id":3,"name"=>"zqf",email:"904208360@qq.comn"}');
-		$sd->send($datas);
-		$info=$sd->getresult();
-		print_r($info);
-		$sd->close();
-		exit;
+        $datas=array('name' => 'userinfo','result'=>'{"id":3,"name"=>"zqf",email:"904208360@qq.comn"}');
+        $sd->send($datas);
+        $info=$sd->getresult();
+        print_r($info);
+        $sd->close();
+        exit;
 
-}
-public function hproseAction(){
+    }
+    public function hproseAction(){
         //hprose调用
         Yaf_Dispatcher::getInstance()->autoRender(FALSE);
         echo hprose::getInstance()->getdata();
         exit;
 
-}
+    }
 }
